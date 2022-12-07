@@ -29,3 +29,5 @@ E:\dotnet\Carepatron-Test-Full\api\obj\Debug\net6.0\refint\api.dll
 E:\dotnet\Carepatron-Test-Full\api\obj\Debug\net6.0\api.pdb
 E:\dotnet\Carepatron-Test-Full\api\obj\Debug\net6.0\api.genruntimeconfig.cache
 E:\dotnet\Carepatron-Test-Full\api\obj\Debug\net6.0\ref\api.dll
+E:\dotnet\Carepatron-Test-Full\api\bin\Debug\net6.0\AutoMapper.dll
+E:\dotnet\Carepatron-Test-Full\api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

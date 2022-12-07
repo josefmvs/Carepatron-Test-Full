@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4Scp0wVsSiI0U28tTQDgvFjCWslmXDZP+b+vDh+T+nGEaUSVI2r/FLCyIeMuB+5QHjUjSDaSKWlCMx4swkWf1w==",
+  "dgSpecHash": "m72kTYFG/dItR9z52YIQ1Gx+RkSYfWNe2oyt+ZH4hGT9D01TDmHegopofOGl0LFWfDrOFN9jkdV694I9KNfT1Q==",
   "success": true,
   "projectFilePath": "E:\\dotnet\\Carepatron-Test-Full\\api\\api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
