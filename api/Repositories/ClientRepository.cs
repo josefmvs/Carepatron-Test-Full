@@ -7,6 +7,8 @@ namespace api.Repositories
     public interface IClientRepository
     {
         Task<Client[]> Get();
+        Task<Client[]> Search(string name);
+        Task<Client?> GetOne(string id);
         Task Create(Client client);
         Task Update(Client client);
     }
@@ -29,6 +31,16 @@ namespace api.Repositories
         public Task<Client[]> Get()
         {
             return dataContext.Clients.ToArrayAsync();
+        }
+
+        public Task<Client[]> Search(string name)
+        {
+            return dataContext.Clients.Where( a => a.LastName.ToLower() == name.ToLower() || a.FirstName.ToLower() == name.ToLower() ).ToArrayAsync();
+        }
+
+        public Task<Client?> GetOne(string id)
+        {
+            return dataContext.Clients.FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public async Task Update(Client client)
