@@ -35,7 +35,7 @@ namespace api.Repositories
 
         public Task<Client[]> Search(string name)
         {
-            return dataContext.Clients.Where( a => a.LastName.ToLower() == name.ToLower() || a.FirstName.ToLower() == name.ToLower() ).ToArrayAsync();
+            return dataContext.Clients.Where( a => a.LastName.ToLower().Contains(name.ToLower()) || a.FirstName.ToLower().Contains(name.ToLower()) ).ToArrayAsync();
         }
 
         public Task<Client?> GetOne(string id)

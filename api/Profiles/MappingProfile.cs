@@ -17,7 +17,7 @@ namespace api.Profiles
                 .ForMember(dest => dest.LastName, act => act.MapFrom(src => src.LastName))
                 .ForMember(dest => dest.Email, act => act.MapFrom(src => src.Email))
                 .ForMember(dest => dest.PhoneNumber, act => act.MapFrom(src => src.PhoneNumber))
-                .ForMember(dest => dest.Id, act => act.MapFrom(src => DateTime.Now.ToString()));
+                .ForMember(dest => dest.Id, act => act.MapFrom(src => Guid.NewGuid().ToString()));
         }
     }
 }
