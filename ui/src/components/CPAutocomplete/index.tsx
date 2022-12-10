@@ -1,10 +1,39 @@
 import Autocomplete from '@mui/material/Autocomplete';
-import { TextField } from "@mui/material";
+import { InputAdornment, TextField } from "@mui/material";
+import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 
-const CPAutocomplete = () => {
-  
+const CPAutocomplete= (props: IApplicationState) => {
+    const { clients } = props;
+    const clientNames = clients.map((a) => `${a.firstName} ${a.lastName}` );
+
     return (
-        <TextField></TextField>
+        <Autocomplete
+            freeSolo
+            id="free-solo-demo"
+            options={clientNames}
+            sx={{ width: 300 }}
+            renderInput={params => (
+            <TextField 
+                {...params}
+                fullWidth
+                // InputProps={{
+                //   endAdornment: <InputAdornment position="end"><SearchSharpIcon/></InputAdornment>
+                // }}
+                placeholder="Search clients…" variant="outlined"
+                InputProps={{
+                  ...params.InputProps,
+                  endAdornment: (
+                    <>
+                      <InputAdornment position="end">
+                        <SearchSharpIcon />
+                      </InputAdornment>
+                      {params.InputProps.endAdornment}
+                    </>
+                  )
+                }}
+            />
+            )}
+        />
     );
   };
   

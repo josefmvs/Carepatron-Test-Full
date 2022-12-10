@@ -46,7 +46,7 @@ function Clients() {
       <Grid mt={3} container>
         <Grid item xs={6}>
           <Box sx={{display: 'flex', justifyContent: 'flex-start'}}>
-            <CPAutocomplete></CPAutocomplete>
+            <CPAutocomplete clients={clients} ></CPAutocomplete>
           </Box>
         </Grid>
         <Grid item xs={6}>
