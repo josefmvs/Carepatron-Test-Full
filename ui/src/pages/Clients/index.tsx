@@ -5,6 +5,7 @@ import Page from "../../components/Page";
 import CPAutocomplete from "../../components/CPAutocomplete";
 import CPModal from "../../components/CPModal";
 import ClientTable from "./ClientTable";
+import AddClient from "./AddClient";
 import { getClients } from "../../services/api";
 import './clientPage.css';
 
@@ -12,6 +13,7 @@ function Clients() {
   const { state, dispatch } = useContext(StateContext);
   const { clients } = state;
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [step, setStep] = useState<number>(1);
 
   useEffect(() => {
     getClients().then((clients) =>
@@ -20,7 +22,20 @@ function Clients() {
   }, [dispatch]);
 
   const handleModal = () => {
+    setStep(1);
     setOpenModal(true);
+  }
+
+  const handleClose = () => {
+    setOpenModal(false);
+  }
+
+  const handleSubmit = (fullname: string) => {
+    console.log(`${fullname} submitted...`)
+  }
+
+  const handleNext = () => {
+    setStep(2)
   }
 
   return (
@@ -29,12 +44,12 @@ function Clients() {
         Clients
       </Typography>
       <Grid mt={3} container>
-        <Grid xs={6}>
+        <Grid item xs={6}>
           <Box sx={{display: 'flex', justifyContent: 'flex-start'}}>
             <CPAutocomplete></CPAutocomplete>
           </Box>
         </Grid>
-        <Grid xs={6}>
+        <Grid item xs={6}>
           <Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
             <Button id='new-client-btn' variant="contained" onClick={handleModal}>Create new client</Button>
           </Box>
@@ -43,7 +58,10 @@ function Clients() {
       <Paper sx={{ margin: "auto", marginTop: 3 }}>
         <ClientTable clients={clients} />
       </Paper>
-      <CPModal open={openModal}></CPModal>
+      <CPModal title='Creates new client' open={openModal} handleClose={handleClose}
+        content={<AddClient handleClose={handleClose}/>} 
+      >
+      </CPModal>
     </Page>
   );
 }
