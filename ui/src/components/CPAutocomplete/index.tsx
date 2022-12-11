@@ -1,6 +1,7 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import { InputAdornment, TextField } from "@mui/material";
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
+import { border, borders } from '@mui/system';
 
 const CPAutocomplete= (props: IApplicationState) => {
     const { clients } = props;
@@ -16,10 +17,8 @@ const CPAutocomplete= (props: IApplicationState) => {
             <TextField 
                 {...params}
                 fullWidth
-                // InputProps={{
-                //   endAdornment: <InputAdornment position="end"><SearchSharpIcon/></InputAdornment>
-                // }}
                 placeholder="Search clients…" variant="outlined"
+                size="small"
                 InputProps={{
                   ...params.InputProps,
                   endAdornment: (
@@ -31,6 +30,9 @@ const CPAutocomplete= (props: IApplicationState) => {
                     </>
                   )
                 }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderColor: '#F2F4F7' }}
             />
             )}
         />

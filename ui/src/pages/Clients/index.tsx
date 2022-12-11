@@ -7,13 +7,11 @@ import CPModal from "../../components/CPModal";
 import ClientTable from "./ClientTable";
 import AddClient from "./AddClient";
 import { getClients } from "../../services/api";
-import './clientPage.css';
 
 function Clients() {
   const { state, dispatch } = useContext(StateContext);
   const { clients } = state;
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const [step, setStep] = useState<number>(1);
 
   useEffect(() => {
     getClients().then((clients) =>
@@ -22,20 +20,11 @@ function Clients() {
   }, [dispatch]);
 
   const handleModal = () => {
-    setStep(1);
     setOpenModal(true);
   }
 
   const handleClose = () => {
     setOpenModal(false);
-  }
-
-  const handleSubmit = (fullname: string) => {
-    console.log(`${fullname} submitted...`)
-  }
-
-  const handleNext = () => {
-    setStep(2)
   }
 
   return (
@@ -51,14 +40,14 @@ function Clients() {
         </Grid>
         <Grid item xs={6}>
           <Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
-            <Button id='new-client-btn' variant="contained" onClick={handleModal}>Create new client</Button>
+            <Button sx={{textTransform: 'none'}} variant="contained" onClick={handleModal}>Create new client</Button>
           </Box>
         </Grid>
       </Grid>
       <Paper sx={{ margin: "auto", marginTop: 3 }}>
         <ClientTable clients={clients} />
       </Paper>
-      <CPModal title='Creates new client' open={openModal} handleClose={handleClose}
+      <CPModal title='Create new client' open={openModal} handleClose={handleClose}
         content={<AddClient handleClose={handleClose}/>} 
       >
       </CPModal>
