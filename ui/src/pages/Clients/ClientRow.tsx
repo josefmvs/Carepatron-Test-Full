@@ -1,4 +1,4 @@
-import { TableCell, TableRow } from "@mui/material";
+import { Button, TableCell, TableRow } from "@mui/material";
 
 export interface IProps {
   client: IClient;
@@ -10,16 +10,9 @@ export default function ClientListItem({ client }: IProps) {
   return (
     <TableRow
       key={id}
-      sx={{
-        "&:last-child td, &:last-child th": { border: 0 },
-        cursor: "pointer",
-        "&:hover": {
-          backgroundColor: "#f5f5f5",
-        },
-      }}
     >
       <TableCell component="th" scope="row">
-        {firstName} {lastName}
+        <Button sx={{textTransform: 'none'}} variant="text">{firstName} {lastName}</Button>
       </TableCell>
       <TableCell>{phoneNumber}</TableCell>
       <TableCell>{email}</TableCell>

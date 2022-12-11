@@ -11,10 +11,14 @@ export default function BasicTable({ clients }: { clients: IClient[] }) {
   return (
     <TableContainer component={Paper} sx={{ maxWidth: "100%" }}>
       <Table sx={{ minWidth: 400 }} aria-label="simple table">
-        <TableHead>
+        <TableHead sx={{
+          "& .MuiTableCell-head": {
+            fontWeight: "bold",
+          },
+        }}>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Phone number</TableCell>
+            <TableCell>Phone</TableCell>
             <TableCell>Email</TableCell>
           </TableRow>
         </TableHead>
